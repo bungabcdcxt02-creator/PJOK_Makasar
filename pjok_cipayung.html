@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kisi-Kisi PJOK – Kecamatan Cipayung</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1e3a5f;
+    --blue: #2563eb;
+    --sky: #0ea5e9;
+    --sky-light: #e0f2fe;
+    --teal: #0d9488;
+    --teal-light: #ccfbf1;
+    --amber: #d97706;
+    --amber-light: #fef3c7;
+    --rose: #e11d48;
+    --rose-light: #ffe4e6;
+    --violet: #7c3aed;
+    --violet-light: #ede9fe;
+    --slate: #64748b;
+    --dark: #0f172a;
+    --white: #ffffff;
+    --surface: #f8fafc;
+    --border: #e2e8f0;
+    --shadow: 0 4px 24px rgba(30,58,95,0.10);
+    --r: 14px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: #f0f4ff;
+    color: var(--dark);
+  }
+
+  /* HEADER */
+  header {
+    background: var(--navy);
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .header-deco {
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 320px; height: 320px;
+    background: radial-gradient(circle, rgba(37,99,235,0.35) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .header-deco2 {
+    position: absolute;
+    bottom: -60px; left: -40px;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(14,165,233,0.25) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .header-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 48px 24px 40px;
+    position: relative;
+    z-index: 1;
+  }
+  .kec-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(37,99,235,0.25);
+    border: 1px solid rgba(37,99,235,0.4);
+    color: #93c5fd;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 99px;
+    margin-bottom: 20px;
+  }
+  header h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(30px, 6vw, 54px);
+    color: #fff;
+    line-height: 1.1;
+    max-width: 600px;
+  }
+  header h1 span { color: #60a5fa; }
+  .sub-info { color: #94a3b8; font-size: 14px; margin-top: 12px; font-weight: 500; }
+
+  /* INFO STRIP */
+  .info-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 28px;
+  }
+  .info-chip {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: #cbd5e1;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .info-chip strong { color: #fff; }
+
+  /* MAIN */
+  main { max-width: 960px; margin: 0 auto; padding: 32px 16px 64px; }
+
+  /* SECTION TITLE */
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 22px;
+    color: var(--navy);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 2px;
+    background: var(--border);
+    margin-left: 12px;
+  }
+
+  /* SUMMARY CARDS */
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+    margin-bottom: 36px;
+  }
+  .sum-card {
+    background: var(--white);
+    border-radius: var(--r);
+    padding: 20px 16px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    border-top: 3px solid transparent;
+    transition: transform 0.2s;
+  }
+  .sum-card:hover { transform: translateY(-2px); }
+  .sum-card .num {
+    font-family: 'Syne', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .sum-card .lbl { font-size: 12px; font-weight: 600; color: var(--slate); }
+
+  /* FILTER + SEARCH */
+  .toolbar {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    align-items: center;
+  }
+  .search-box {
+    flex: 1;
+    min-width: 200px;
+    background: var(--white);
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .search-box input {
+    flex: 1; border: none; outline: none;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 14px; color: var(--dark);
+  }
+  .search-box input::placeholder { color: #94a3b8; }
+
+  .kelas-tabs {
+    display: flex;
+    background: var(--white);
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .kelas-btn {
+    padding: 10px 20px;
+    border: none;
+    background: transparent;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    color: var(--slate);
+    transition: all 0.2s;
+  }
+  .kelas-btn.active { background: var(--blue); color: #fff; }
+
+  /* TP CARDS */
+  .tp-card {
+    background: var(--white);
+    border-radius: var(--r);
+    box-shadow: var(--shadow);
+    margin-bottom: 14px;
+    overflow: hidden;
+    border-left: 4px solid transparent;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .tp-card:hover { transform: translateY(-1px); box-shadow: 0 8px 28px rgba(30,58,95,0.13); }
+
+  .tp-header {
+    padding: 16px 20px;
+    display: grid;
+    grid-template-columns: 48px 1fr auto;
+    gap: 14px;
+    align-items: center;
+    cursor: pointer;
+  }
+  .tp-icon {
+    width: 48px; height: 48px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+  .tp-meta { min-width: 0; }
+  .tp-code {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .tp-label { font-size: 15px; font-weight: 700; line-height: 1.35; }
+  .tp-right { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; flex-shrink: 0; }
+  .kelas-badge {
+    padding: 3px 10px;
+    border-radius: 99px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .arrow { font-size: 16px; opacity: 0.4; transition: transform 0.3s; }
+  .tp-card.open .arrow { transform: rotate(180deg); opacity: 0.8; }
+
+  .tp-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+  .tp-card.open .tp-body { max-height: 1200px; }
+  .tp-content { padding: 0 20px 22px; }
+  .tp-content p { font-size: 14px; line-height: 1.7; color: var(--slate); margin-bottom: 12px; }
+
+  /* soal table */
+  .soal-table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 12px 0; }
+  .soal-table th { background: var(--navy); color: #fff; padding: 8px 10px; text-align: left; font-size: 12px; }
+  .soal-table td { padding: 7px 10px; border-bottom: 1px solid #f1f5f9; }
+  .soal-table tr:last-child td { border-bottom: none; }
+  .soal-table tr:hover td { background: #f8fafc; }
+
+  /* level badge */
+  .lvl { padding: 3px 8px; border-radius: 6px; font-size: 11px; font-weight: 700; display: inline-block; }
+  .lvl-L1 { background: var(--teal-light); color: var(--teal); }
+  .lvl-L2 { background: var(--amber-light); color: var(--amber); }
+  .lvl-L3 { background: var(--rose-light); color: var(--rose); }
+
+  .soal-type { padding: 3px 8px; border-radius: 6px; font-size: 11px; font-weight: 700; }
+  .st-BS { background: #e0f2fe; color: #0369a1; }
+  .st-PG { background: #dcfce7; color: #15803d; }
+  .st-PGK { background: #ede9fe; color: #7c3aed; }
+  .st-MJ { background: #fef3c7; color: #92400e; }
+  .st-IS { background: #fce7f3; color: #9d174d; }
+  .st-UT { background: #ffedd5; color: #c2410c; }
+
+  /* materi list */
+  .materi-list { list-style: none; margin: 10px 0; }
+  .materi-list li {
+    padding: 8px 12px;
+    background: var(--surface);
+    border-radius: 8px;
+    margin-bottom: 6px;
+    font-size: 13px;
+    color: var(--slate);
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+  }
+  .materi-list li::before { content: '📌'; flex-shrink: 0; }
+
+  /* point box */
+  .point-box {
+    background: var(--surface);
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin: 10px 0;
+  }
+  .point-box h4 { font-size: 13px; font-weight: 700; margin-bottom: 8px; }
+  .point-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    padding: 4px 0;
+    border-bottom: 1px dashed #e2e8f0;
+    color: var(--slate);
+  }
+  .point-row:last-child { border-bottom: none; }
+  .point-row strong { color: var(--dark); }
+
+  /* LEGEND */
+  .legend {
+    background: var(--white);
+    border-radius: var(--r);
+    padding: 20px;
+    box-shadow: var(--shadow);
+    margin-bottom: 28px;
+  }
+  .legend h3 { font-size: 15px; font-weight: 700; margin-bottom: 12px; }
+  .legend-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 8px; }
+  .legend-item { display: flex; align-items: center; gap: 8px; font-size: 13px; }
+
+  /* empty */
+  .empty { text-align: center; padding: 48px; color: #94a3b8; font-weight: 700; }
+
+  footer { text-align: center; padding: 24px; font-size: 13px; color: #94a3b8; font-weight: 600; }
+
+  /* Progress */
+  .prog-wrap {
+    background: var(--white);
+    border-radius: var(--r);
+    padding: 18px 20px;
+    box-shadow: var(--shadow);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .prog-label { font-size: 13px; font-weight: 700; white-space: nowrap; }
+  .prog-track { flex: 1; min-width: 120px; background: #e2e8f0; border-radius: 99px; height: 8px; overflow: hidden; }
+  .prog-fill { height: 100%; background: linear-gradient(90deg, #2563eb, #0ea5e9); border-radius: 99px; width: 0%; transition: width 0.5s; }
+  .prog-count { font-size: 13px; font-weight: 800; color: var(--blue); white-space: nowrap; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-deco"></div>
+  <div class="header-deco2"></div>
+  <div class="header-inner">
+    <div class="kec-badge">🏫 Kecamatan Cipayung</div>
+    <h1>Kisi-Kisi PJOK<br><span>PSKA Kelas 5 & 6</span></h1>
+    <p class="sub-info">Penilaian Sumatif Satuan Pendidikan · Tahun Pelajaran 2025–2026</p>
+    <div class="info-strip">
+      <div class="info-chip">📋 Jumlah Soal: <strong>35 Soal</strong></div>
+      <div class="info-chip">⏱️ Waktu: <strong>120 Menit</strong></div>
+      <div class="info-chip">🎯 Kelas 5: <strong>14 soal</strong></div>
+      <div class="info-chip">🎯 Kelas 6: <strong>21 soal</strong></div>
+      <div class="info-chip">📊 Skor Maks: <strong>65 poin</strong></div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- Summary cards -->
+  <div class="summary-grid">
+    <div class="sum-card" style="border-top-color:#2563eb">
+      <div class="num" style="color:#2563eb">5</div>
+      <div class="lbl">Soal B-S</div>
+    </div>
+    <div class="sum-card" style="border-top-color:#15803d">
+      <div class="num" style="color:#15803d">10</div>
+      <div class="lbl">Soal PG</div>
+    </div>
+    <div class="sum-card" style="border-top-color:#7c3aed">
+      <div class="num" style="color:#7c3aed">5</div>
+      <div class="lbl">Soal PGK</div>
+    </div>
+    <div class="sum-card" style="border-top-color:#92400e">
+      <div class="num" style="color:#92400e">5</div>
+      <div class="lbl">Soal MJ</div>
+    </div>
+    <div class="sum-card" style="border-top-color:#9d174d">
+      <div class="num" style="color:#9d174d">5</div>
+      <div class="lbl">Soal Isian</div>
+    </div>
+    <div class="sum-card" style="border-top-color:#c2410c">
+      <div class="num" style="color:#c2410c">5</div>
+      <div class="lbl">Uraian</div>
+    </div>
+  </div>
+
+  <!-- Legend -->
+  <div class="legend">
+    <h3>📖 Keterangan Bentuk Soal & Level Kognitif</h3>
+    <div class="legend-grid">
+      <div class="legend-item"><span class="soal-type st-BS">B-S</span> Benar-Salah (skor 2)</div>
+      <div class="legend-item"><span class="soal-type st-PG">PG</span> Pilihan Ganda (skor 1)</div>
+      <div class="legend-item"><span class="soal-type st-PGK">PGK</span> PG Kompleks (skor 2)</div>
+      <div class="legend-item"><span class="soal-type st-MJ">MJ</span> Menjodohkan (skor 2)</div>
+      <div class="legend-item"><span class="soal-type st-IS">IS</span> Isian (skor 2)</div>
+      <div class="legend-item"><span class="soal-type st-UT">UT</span> Uraian (skor 3)</div>
+      <div class="legend-item"><span class="lvl lvl-L1">L1</span> Pemahaman</div>
+      <div class="legend-item"><span class="lvl lvl-L2">L2</span> Penerapan</div>
+      <div class="legend-item"><span class="lvl lvl-L3">L3</span> Penalaran</div>
+    </div>
+  </div>
+
+  <!-- Progress -->
+  <div class="prog-wrap">
+    <span class="prog-label">📚 Progress belajar:</span>
+    <div class="prog-track"><div class="prog-fill" id="pf"></div></div>
+    <span class="prog-count" id="pc">0 / 15 TP</span>
+  </div>
+
+  <!-- Toolbar -->
+  <div class="toolbar">
+    <div class="search-box">
+      <span>🔍</span>
+      <input id="search" type="text" placeholder="Cari tujuan pembelajaran atau materi...">
+    </div>
+    <div class="kelas-tabs">
+      <button class="kelas-btn active" data-kelas="all">Semua</button>
+      <button class="kelas-btn" data-kelas="5">Kelas 5</button>
+      <button class="kelas-btn" data-kelas="6">Kelas 6</button>
+    </div>
+  </div>
+
+  <!-- ─── KELAS 5 ─── -->
+  <div class="section-title">🟢 Tujuan Pembelajaran — Kelas 5</div>
+
+  <div class="tp-card" data-kelas="5" data-id="1" style="border-left-color:#2563eb">
+    <div class="tp-header" onclick="toggleTP(this)">
+      <div class="tp-icon" style="background:#dbeafe;">🏃</div>
+      <div class="tp-meta">
+        <div class="tp-code" style="color:#2563eb">TP 1.1</div>
+        <div class="tp-label">Gerak Dasar dalam Permainan Invasi</div>
+      </div>
+      <div class="tp-right">
+        <span class="kelas-badge" style="background:#dbeafe;color:#1e40af">Kelas 5</span>
+        <span class="arrow">▼</span>
+      </div>
+    </div>
+    <div class="tp-body">
+      <div class="tp-content">
+        <p><strong>Tujuan:</strong> Mempraktikkan modifikasi pada berbagai aktivitas pola gerak dasar dan keterampilan gerak dalam permainan invasi.</p>
+        <p>Permainan invasi adalah permainan yang melibatkan memasuki area lawan untuk mencetak poin, seperti sepak bola, bola basket, dan hoki.</p>
+        <ul class="materi-list">
+          <li>Gerak dasar <strong>Lokomotor</strong> – gerakan yang memindahkan tubuh dari satu tempat ke tempat lain (berlari, melompat)</li>
+          <li>Gerak dasar <strong>Non-Lokomotor</strong> – gerakan di tempat (menekuk, memutar, mengayun)</li>
+          <li>Gerak dasar <strong>Manipulatif</strong> – gerakan menggunakan benda/alat (melempar, menangkap, menendang bola)</li>
+          <li>Permainan modifikasi untuk melatih keterampilan gerak dasar</li>
+        </ul>
+        <table class="soal-table">
+          <tr><th>Bentuk Soal</th><th>No. Soal</th><th>Level</th><th>Indikator</th></tr>
+          <tr><td><span class="soal-type st-BS">B-S</span></td><td>1</td><td><span class="lvl lvl-L1">L1</span></td><td>Menyebutkan gerak dasar manipulatif dalam permainan invasi</td></tr>
+          <tr><td><span class="soal-type st-PG">PG</span></td><td>15</td><td>–</td><td>Permainan modifikasi</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="tp-card" data-kelas="5" data-id="2" style="border-left-color:#0d9488">
+    <div class="tp-header" onclick="toggleTP(this)">
+      <div class="tp-icon" style="background:#ccfbf1;">🏸</div>
+      <div class="tp-meta">
+        <div class="tp-code" style="color:#0d9488">TP 1.2</div>
+        <div class="tp-label">Strategi Gerak dalam Permainan Net</div>
+      </div>
+      <div class="tp-right">
+        <span class="kelas-badge" style="background:#ccfbf1;color:#0f766e">Kelas 5</span>
+        <span class="arrow">▼</span>
+      </div>
+    </div>
+    <div class="tp-body">
+      <div class="tp-content">
+        <p><strong>Tujuan:</strong> Mempraktikkan strategi gerak pada berbagai aktivitas pola gerak dasar dan keterampilan gerak dalam permainan net.</p>
+        <p>Permainan net adalah permainan yang dipisahkan oleh net/jaring, seperti bulu tangkis, tenis meja, dan voli.</p>
+        <ul class="materi-list">
+          <li>Strategi penempatan posisi pemain di permainan net</li>
+          <li>Teknik memukul, servis, dan menerima bola/kok</li>
+          <li>Kerjasama tim dalam permainan net beregu</li>
+        </ul>
+        <table class="soal-table">
+          <tr><th>Bentuk Soal</th><th>No. Soal</th></tr>
+          <tr><td><span class="soal-type st-PGK">PGK</span></td><td>16</td></tr>
+          <tr><td><span class="soal-type st-UT">Uraian</span></td><td>31</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="tp-card" data-kelas="5" data-id="3" style="border-left-color:#7c3aed">
+    <div class="tp-header" onclick="toggleTP(this)">
+      <div class="tp-icon" style="background:#ede9fe;">🎵</div>
+      <div class="tp-meta">
+        <div class="tp-code" style="color:#7c3aed">TP 2.3</div>
+        <div class="tp-label">Kerja Sama Kelompok dalam Gerak Berirama</div>
+      </div>
+      <div class="tp-right">
+        <span class="kelas-badge" style="background:#ede9fe;color:#6d28d9">Kelas 5</span>
+        <span class="arrow">▼</span>
+      </div>
+    </div>
+    <div class="tp-body">
+      <div class="tp-content">
+        <p><strong>Tujuan:</strong> Menerapkan kerjasama kelompok atau tim dengan memberi kontribusi pada aktivitas kelompok dalam aktivitas gerak berirama.</p>
+        <p>Senam irama adalah gerakan senam yang dilakukan mengikuti iringan musik, ketukan, atau hitungan. Dalam kelompok, setiap anggota harus bergerak serentak dan harmonis.</p>
+        <ul class="materi-list">
+          <li>Gerakan dasar senam irama: V step, single step, double step</li>
+          <li>Kombinasi langkah kaki dan ayunan lengan</li>
+          <li>Kontribusi individu dalam tim senam irama</li>
+          <li>Prinsip kekompakan dan keserasian gerak bersama</li>
+        </ul>
+        <table class="soal-table">
+          <tr><th>Bentuk Soal</th><th>No. Soal</th><th>Level</th></tr>
+          <tr><td><span class="soal-type st-BS">B-S</span></td><td>2</td><td>–</td></tr>
+          <tr><td><span class="soal-type st-PG">PG</span></td><td>6</td><td><span class="lvl lvl-L3">L3</span></td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="tp-card" data-kelas="5" data-id="4" style="border-left-color:#d97706">
+    <div class="tp-header" onclick="toggleTP(this)">
+      <div class="tp-icon" style="background:#fef3c7;">💪</div>
+      <div class="tp-meta">
+        <div class="tp-code" style="color:#d97706">TP 3.1</div>
+        <div class="tp-label">Kebugaran Jasmani – Daya Tahan Tubuh</div>
+      </div>
+      <div class="tp-right">
+        <span class="kelas-badge" style="background:#fef3c7;color:#92400e">Kelas 5</span>
+        <span class="arrow">▼</span>
+      </div>
+    </div>
+    <div class="tp-body">
+      <div class="tp-content">
+        <p><strong>Tujuan:</strong> Mempraktikkan aktivitas kebugaran jasmani dalam kategori daya tahan tubuh yang teratur terhadap kesehatan diri.</p>
+        <p>Daya tahan tubuh adalah kemampuan jantung, paru-paru, dan otot untuk terus bekerja dalam waktu yang lama tanpa cepat lelah.</p>
+        <ul class="materi-list">
+          <li>Latihan kardiovaskular: lari jarak jauh, bersepeda, berenang</li>
+          <li>Manfaat latihan daya tahan: meningkatkan kesehatan jantung dan paru-paru</li>
+          <li>Frekuensi latihan yang dianjurkan untuk anak SD</li>
+        </ul>
+        <table class="soal-table">
+          <tr><th>Bentuk Soal</th><th>No. Soal</th><th>Level</th></tr>
+          <tr><td><span class="soal-type st-PG">PG</span></td><td>7</td><td><span class="lvl lvl-L2">L2</span></td></tr>
+          <tr><td><span class="soal-type st-IS">Isian</span></td><td>29</td><td><span class="lvl lvl-L2">L2</span></td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="tp-card" data-kelas="5" data-id="5" style="border-left-color:#e11d48">
+    <div class="tp-header" onclick="toggleTP(this)">
+      <div class="tp-icon" style="background:#ffe4e6;">🧺</div>
+      <div class="tp-meta">
+        <div class="tp-code" style="color:#e11d48">TP 4.1</div>
+        <div class="tp-label">Kebersihan Pakaian & Pentingnya Istirahat</div>
+      </div>
+      <div class="tp-right">
+        <span class="kelas-badge" style="background:#ffe4e6;color:#9f1239">Kelas 5</span>
+        <span class="arrow">▼</span>
+      </div>
+    </div>
+    <div class="tp-body">
+      <div class="tp-content">
+        <p><strong>Tujuan:</strong> Menjelaskan manfaat menjaga kebersihan pakaian dan pentingnya beristirahat dalam budaya hidup sehat.</p>
+        <ul class="materi-list">
+          <li>Manfaat menjaga kebersihan pakaian: mencegah penyakit kulit, jamur, dan bakteri</li>
+          <li>Cara merawat pakaian yang benar: mencuci, menjemur, menyetrika</li>
+          <li>Pentingnya istirahat: tubuh membutuhkan 8–10 jam tidur untuk anak SD</li>
+          <li>Dampak kurang istirahat: konsentrasi menurun, imunitas turun</li>
+        </ul>
+        <table class="soal-table">
+          <tr><th>Bentuk Soal</th><th>No. Soal</th></tr>
+          <tr><td><span class="soal-type st-PG">PG</span></td><td>8</td></tr>
+          <tr><td><span class="soal-type st-MJ">MJ</span></td><td>21</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="tp-card" data-kelas="5" data-id="6" style="border-left-color:#059669">
+    <div class="tp-header" onclick="toggleTP(this)">
+      <div class="tp-icon" style="background:#d1fae5;">🥗</div>
+      <div class="tp-meta">
+        <div class="tp-code" style="color:#059669">TP 4.2</div>
+        <div class="tp-label">Makanan Sehat, Bergizi & Seimbang</div>
+      </div>
+      <div class="tp-right">
+        <span class="kelas-badge" style="background:#d1fae5;color:#065f46">Kelas 5</span>
+        <span class="arrow">▼</span>
+      </div>
+    </div>
+    <div class="tp-body">
+      <div class="tp-content">
+        <p><strong>Tujuan:</strong> Menentukan jenis makanan sehat, bergizi, dan seimbang.</p>
+        <ul class="materi-list">
+          <li>Pengertian makanan sehat: makanan yang bebas dari bahan berbahaya</li>
+          <li>Pengertian bergizi: mengandung karbohidrat, protein, lemak, vitamin, mineral, air</li>
+          <li>Pengertian seimbang: porsi sesuai kebutuhan tubuh (mengacu pada Isi Piringku)</li>
+          <li>Contoh jenis makanan sehat: nasi, sayur, ikan, buah, susu</li>
+        </ul>
+        <table class="soal-table">
+          <tr><th>Bentuk Soal</th><th>No. Soal</th></tr>
+          <tr><td><span class="soal-type st-BS">B-S</span></td><td>3</td></tr>
+          <tr><td><span class="soal-type st-UT">Uraian</span></td><td>32</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="tp-card" data-kelas="5" data-id="7" style="border-left-color:#b45309">
+    <div class="tp-header" onclick="toggleTP(this)">
+      <div class="tp-icon" style="background:#fef9c3;">🤕</div>
+      <div class="tp-meta">
+        <div class="tp-code" style="color:#b45309">TP 4.3</div>
+        <div class="tp-label">Jenis-Jenis Cedera dalam Olahraga</div>
+      </div>
+      <div class="tp-right">
+        <span class="kelas-badge" style="background:#fef9c3;color:#78350f">Kelas 5</span>
+        <span class="arrow">▼</span>
+      </div>
+    </div>
+    <div class="tp-body">
+      <div class="tp-content">
+        <p><strong>Tujuan:</strong> Menjabarkan jenis-jenis cedera dalam aktivitas gerak olahraga.</p>
+        <ul class="materi-list">
+          <li><strong>Memar</strong> – benturan keras menyebabkan pembuluh darah di bawah kulit pecah</li>
+          <li><strong>Luka lecet</strong> – gesekan dengan permukaan kasar</li>
+          <li><strong>Keseleo (sprain)</strong> – peregangan atau robekan ligamen pada sendi</li>
+          <li><strong>Kram otot</strong> – kontraksi otot yang tiba-tiba dan tidak terkendali</li>
+          <li><strong>Patah tulang (fraktur)</strong> – tulang retak atau patah akibat benturan keras</li>
+          <li><strong>Dislokasi</strong> – tulang keluar dari sendi normalnya</li>
+        </ul>
+        <table class="soal-table">
+          <tr><th>Bentuk Soal</th><th>No. Soal</th><th>Level</th></tr>
+          <tr><td><span class="soal-type st-MJ">MJ</span></td><td>25</td><td>–</td></tr>
+          <tr><td><span class="soal-type st-IS">Isian</span></td><td>28</td><td><span class="lvl lvl-L3">L3</span></td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── KELAS 6 ─── -->
+  <div class="section-title" style="margin-top: 36px;">🔵 Tujuan Pembelajaran — Kelas 6</div>
+
+  <div class="tp-card" data-kelas="6" data-id="8" style="border-left-color:#0284c7">
+    <div class="tp-header" onclick="toggleTP(this)">
+      <div class="tp-icon" style="background:#e0f2fe;">⚾</div>
+      <div class="tp-meta">
+        <div class="tp-code" style="color:#0284c7">TP 1.3</div>
+        <div class="tp-label">Konsep Gerak dalam Permainan Lapangan</div>
+      </div>
+      <div class="tp-right">
+        <span class="kelas-badge" style="background:#e0f2fe;color:#075985">Kelas 6</span>
+        <span class="arrow">▼</span>
+      </div>
+    </div>
+    <div class="tp-body">
+      <div class="tp-content">
+        <p><strong>Tujuan:</strong> Mempraktikkan konsep gerak untuk meningkatkan capaian keterampilan gerak melalui aktivitas permainan lapangan.</p>
+        <ul class="materi-list">
+          <li>Permainan lapangan: kasti, rounders, softball, cricket</li>
+          <li>Teknik memukul, melempar, menangkap, dan berlari antar base</li>
+          <li>Konsep gerak ruang (space), waktu (time), dan tenaga (force)</li>
+        </ul>
+        <table class="soal-table">
+          <tr><th>Bentuk Soal</th><th>No. Soal</th><th>Level</th></tr>
+          <tr><td><span class="soal-type st-PG">PG</span></td><td>12</td><td><span class="lvl lvl-L3">L3</span></td></tr>
+          <tr><td><span class="soal-type st-IS">Isian</span></td><td>26</td><td><span class="lvl lvl-L2">L2</span></td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="tp-card" data-kelas="6" data-id="9" style="border-left-color:#dc2626">
+    <div class="tp-header" onclick="toggleTP(this)">
+      <div class="tp-icon" style="background:#fee2e2;">🥋</div>
+      <div class="tp-meta">
+        <div class="tp-code" style="color:#dc2626">TP 2.1</div>
+        <div class="tp-label">Prinsip Dasar Gerak Pencak Silat</div>
+      </div>
+      <div class="tp-right">
+        <span class="kelas-badge" style="background:#fee2e2;color:#991b1b">Kelas 6</span>
+        <span class="arrow">▼</span>
+      </div>
+    </div>
+    <div class="tp-body">
+      <div class="tp-content">
+        <p><strong>Tujuan:</strong> Menjelaskan prinsip-prinsip dasar gerak yang efektif dalam aktivitas bela diri Pencak Silat.</p>
+        <p>Pencak Silat adalah seni bela diri tradisional Indonesia yang diakui UNESCO. Induk organisasinya adalah <strong>IPSI (Ikatan Pencak Silat Indonesia)</strong>.</p>
+        <ul class="materi-list">
+          <li><strong>Kuda-kuda</strong> – posisi dasar berdiri dengan kaki terbuka untuk menjaga keseimbangan</li>
+          <li><strong>Pukulan</strong> – serangan menggunakan kepalan tangan (lurus, samping, tegak)</li>
+          <li><strong>Tendangan</strong> – serangan menggunakan kaki (depan, samping, belakang)</li>
+          <li><strong>Tangkisan</strong> – gerakan menangkis/menangkal serangan lawan</li>
+          <li><strong>Elakan</strong> – menghindari serangan dengan menggeser posisi tubuh</li>
+          <li><strong>Jatuhan</strong> – teknik menjatuhkan lawan</li>
+        </ul>
+        <table class="soal-table">
+          <tr><th>Bentuk Soal</th><th>No. Soal</th></tr>
+          <tr><td><span class="soal-type st-BS">B-S</span></td><td>4</td></tr>
+          <tr><td><span class="soal-type st-PG">PG</span></td><td>11</td></tr>
+          <tr><td><span class="soal-type st-PGK">PGK</span></td><td>18</td></tr>
+          <tr><td><span class="soal-type st-MJ">MJ</span></td><td>23</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="tp-card" data-kelas="6" data-id="10" style="border-left-color:#7c3aed">
+    <div class="tp-header" onclick="toggleTP(this)">
+      <div class="tp-icon" style="background:#ede9fe;">🎮</div>
+      <div class="tp-meta">
+        <div class="tp-code" style="color:#7c3aed">TP 2.2</div>
+        <div class="tp-label">Permainan Tradisional – Fair Play & Inklusif</div>
+      </div>
+      <div class="tp-right">
+        <span class="kelas-badge" style="background:#ede9fe;color:#5b21b6">Kelas 6</span>
+        <span class="arrow">▼</span>
+      </div>
+    </div>
+    <div class="tp-body">
+      <div class="tp-content">
+        <p><strong>Tujuan:</strong> Menjelaskan peraturan alternatif dan modifikasi permainan untuk mendukung fair play dan partisipasi inklusif dalam permainan tradisional.</p>
+        <ul class="materi-list">
+          <li><strong>Fair play</strong> = bermain jujur, menghormati lawan, menerima keputusan wasit</li>
+          <li><strong>Inklusif</strong> = memberi kesempatan kepada semua pemain tanpa diskriminasi</li>
+          <li>Contoh permainan tradisional: gobak sodor, engklek, bentengan, gasing</li>
+          <li>Modifikasi aturan: menyederhanakan aturan agar semua bisa berpartisipasi</li>
+        </ul>
+        <table class="soal-table">
+          <tr><th>Bentuk Soal</th><th>No. Soal</th><th>Level</th></tr>
+          <tr><td><span class="soal-type st-PGK">PGK</span></td><td>19</td><td><span class="lvl lvl-L2">L2</span></td></tr>
+          <tr><td><span class="soal-type st-MJ">MJ</span></td><td>24</td><td>–</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="tp-card" data-kelas="6" data-id="11" style="border-left-color:#0d9488">
+    <div class="tp-header" onclick="toggleTP(this)">
+      <div class="tp-icon" style="background:#ccfbf1;">🏋️</div>
+      <div class="tp-meta">
+        <div class="tp-code" style="color:#0d9488">TP 3.2</div>
+        <div class="tp-label">Latihan Kekuatan Otot Tubuh</div>
+      </div>
+      <div class="tp-right">
+        <span class="kelas-badge" style="background:#ccfbf1;color:#0f766e">Kelas 6</span>
+        <span class="arrow">▼</span>
+      </div>
+    </div>
+    <div class="tp-body">
+      <div class="tp-content">
+        <p><strong>Tujuan:</strong> Menjelaskan pengaruh latihan kekuatan otot tubuh dalam aktivitas kebugaran jasmani.</p>
+        <ul class="materi-list">
+          <li><strong>Push-up</strong> – melatih otot dada, bahu, dan lengan</li>
+          <li><strong>Sit-up</strong> – melatih otot perut</li>
+          <li><strong>Pull-up</strong> – melatih otot lengan dan punggung</li>
+          <li><strong>Squat</strong> – melatih otot paha dan bokong</li>
+          <li><strong>Plank</strong> – melatih otot inti (core muscles)</li>
+          <li>Pengaruh latihan: meningkatkan kekuatan, postur tubuh, metabolisme</li>
+        </ul>
+        <table class="soal-table">
+          <tr><th>Bentuk Soal</th><th>No. Soal</th></tr>
+          <tr><td><span class="soal-type st-BS">B-S</span></td><td>5</td></tr>
+          <tr><td><span class="soal-type st-PG">PG</span></td><td>13</td></tr>
+          <tr><td><span class="soal-type st-PGK">PGK</span></td><td>17</td></tr>
+          <tr><td><span class="soal-type st-UT">Uraian</span></td><td>33</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="tp-card" data-kelas="6" data-id="12" style="border-left-color:#2563eb">
+    <div class="tp-header" onclick="toggleTP(this)">
+      <div class="tp-icon" style="background:#dbeafe;">🧘</div>
+      <div class="tp-meta">
+        <div class="tp-code" style="color:#2563eb">TP 3.4</div>
+        <div class="tp-label">Pencegahan Pola Hidup Sedenter & Strategi Hidup Sehat</div>
+      </div>
+      <div class="tp-right">
+        <span class="kelas-badge" style="background:#dbeafe;color:#1e40af">Kelas 6</span>
+        <span class="arrow">▼</span>
+      </div>
+    </div>
+    <div class="tp-body">
+      <div class="tp-content">
+        <p><strong>Tujuan:</strong> Menjelaskan aktivitas jasmani serta pencegahan perilaku pola hidup sedenter dan membahas strategi hidup sehat.</p>
+        <ul class="materi-list">
+          <li><strong>Pola hidup sedenter</strong> = gaya hidup tidak aktif, banyak duduk/rebahan</li>
+          <li>Dampak negatif: obesitas, diabetes, penyakit jantung, depresi</li>
+          <li><strong>Perilaku hidup sehat sosial spiritual</strong>: beribadah, bersosialisasi, gotong royong</li>
+          <li><strong>Kesehatan mental</strong>: mengelola stres, berpikir positif, minta bantuan jika perlu</li>
+          <li>Strategi: 60 menit aktivitas fisik/hari, kurangi layar, tidur cukup</li>
+        </ul>
+        <table class="soal-table">
+          <tr><th>Bentuk Soal</th><th>No. Soal</th><th>Level</th></tr>
+          <tr><td><span class="soal-type st-PG">PG</span></td><td>9</td><td>–</td></tr>
+          <tr><td><span class="soal-type st-IS">Isian</span></td><td>27</td><td><span class="lvl lvl-L1">L1</span></td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="tp-card" data-kelas="6" data-id="13" style="border-left-color:#e11d48">
+    <div class="tp-header" onclick="toggleTP(this)">
+      <div class="tp-icon" style="background:#ffe4e6;">🦠</div>
+      <div class="tp-meta">
+        <div class="tp-code" style="color:#e11d48">TP 4.1</div>
+        <div class="tp-label">Penyakit Menular & Tidak Menular, Kebersihan Reproduksi</div>
+      </div>
+      <div class="tp-right">
+        <span class="kelas-badge" style="background:#ffe4e6;color:#9f1239">Kelas 6</span>
+        <span class="arrow">▼</span>
+      </div>
+    </div>
+    <div class="tp-body">
+      <div class="tp-content">
+        <p><strong>Tujuan:</strong> Menjelaskan akibat penyakit menular dan tidak menular, serta menjaga kesehatan dan kebersihan alat reproduksi.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0;">
+          <div style="background:#fff0f3;border-radius:10px;padding:12px;">
+            <strong style="color:#e11d48;font-size:12px;">PENYAKIT MENULAR</strong>
+            <ul style="font-size:13px;color:#64748b;padding-left:16px;margin-top:6px;">
+              <li>Flu, batuk, diare</li>
+              <li>TBC, cacar, hepatitis</li>
+              <li>Uretritis (infeksi uretra)</li>
+              <li>Menyebar lewat kontak, udara, air</li>
+            </ul>
+          </div>
+          <div style="background:#f0fdf4;border-radius:10px;padding:12px;">
+            <strong style="color:#15803d;font-size:12px;">PENYAKIT TIDAK MENULAR</strong>
+            <ul style="font-size:13px;color:#64748b;padding-left:16px;margin-top:6px;">
+              <li>Diabetes, hipertensi</li>
+              <li>Asma, kanker, jantung</li>
+              <li>Tidak menyebar antar orang</li>
+              <li>Faktor: gaya hidup, genetik</li>
+            </ul>
+          </div>
+        </div>
+        <ul class="materi-list">
+          <li>Kebersihan alat reproduksi: mandi teratur, ganti pakaian dalam setiap hari</li>
+        </ul>
+        <table class="soal-table">
+          <tr><th>Bentuk Soal</th><th>No. Soal</th><th>Level</th></tr>
+          <tr><td><span class="soal-type st-PG">PG</span></td><td>10</td><td><span class="lvl lvl-L3">L3</span></td></tr>
+          <tr><td><span class="soal-type st-IS">Isian</span></td><td>30</td><td><span class="lvl lvl-L2">L2</span></td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="tp-card" data-kelas="6" data-id="14" style="border-left-color:#059669">
+    <div class="tp-header" onclick="toggleTP(this)">
+      <div class="tp-icon" style="background:#d1fae5;">🥦</div>
+      <div class="tp-meta">
+        <div class="tp-code" style="color:#059669">TP 4.2</div>
+        <div class="tp-label">Pola Makan Sehat, Bergizi & Seimbang (Kelas 6)</div>
+      </div>
+      <div class="tp-right">
+        <span class="kelas-badge" style="background:#d1fae5;color:#065f46">Kelas 6</span>
+        <span class="arrow">▼</span>
+      </div>
+    </div>
+    <div class="tp-body">
+      <div class="tp-content">
+        <p><strong>Tujuan:</strong> Mengkategorikan pola makan sehat, bergizi, dan seimbang.</p>
+        <ul class="materi-list">
+          <li><strong>Karbohidrat</strong> – sumber energi utama (nasi, roti, jagung, kentang)</li>
+          <li><strong>Protein</strong> – membangun dan memperbaiki jaringan tubuh (daging, ikan, telur, tahu)</li>
+          <li><strong>Lemak</strong> – energi cadangan dan pelarut vitamin (minyak, kacang, alpukat)</li>
+          <li><strong>Vitamin & Mineral</strong> – menjaga fungsi tubuh (sayur dan buah-buahan)</li>
+          <li><strong>Air</strong> – 8 gelas/hari untuk menjaga hidrasi tubuh</li>
+          <li><strong>Pedoman "Isi Piringku"</strong>: ½ piring sayur+buah, ¼ nasi/karbohidrat, ¼ lauk protein</li>
+        </ul>
+        <table class="soal-table">
+          <tr><th>Bentuk Soal</th><th>No. Soal</th><th>Level</th></tr>
+          <tr><td><span class="soal-type st-PGK">PGK</span></td><td>20</td><td><span class="lvl lvl-L3">L3</span></td></tr>
+          <tr><td><span class="soal-type st-UT">Uraian</span></td><td>34</td><td><span class="lvl lvl-L3">L3</span></td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="tp-card" data-kelas="6" data-id="15" style="border-left-color:#b45309">
+    <div class="tp-header" onclick="toggleTP(this)">
+      <div class="tp-icon" style="background:#fef3c7;">🩹</div>
+      <div class="tp-meta">
+        <div class="tp-code" style="color:#b45309">TP 4.3</div>
+        <div class="tp-label">Cara Menanggulangi Cedera Olahraga</div>
+      </div>
+      <div class="tp-right">
+        <span class="kelas-badge" style="background:#fef3c7;color:#78350f">Kelas 6</span>
+        <span class="arrow">▼</span>
+      </div>
+    </div>
+    <div class="tp-body">
+      <div class="tp-content">
+        <p><strong>Tujuan:</strong> Menerapkan cara menanggulangi cedera dalam aktivitas gerak olahraga.</p>
+        <p>Metode pertolongan pertama pada cedera olahraga menggunakan prinsip <strong>RICE</strong>:</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0;">
+          <div style="background:#fff7ed;border-radius:10px;padding:12px;text-align:center;">
+            <div style="font-size:24px">❄️</div>
+            <strong style="color:#b45309;">R – Rest</strong>
+            <p style="font-size:12px;color:#64748b;margin-top:4px;">Istirahatkan bagian yang cedera</p>
+          </div>
+          <div style="background:#eff6ff;border-radius:10px;padding:12px;text-align:center;">
+            <div style="font-size:24px">🧊</div>
+            <strong style="color:#1d4ed8;">I – Ice</strong>
+            <p style="font-size:12px;color:#64748b;margin-top:4px;">Kompres dengan es untuk mengurangi bengkak</p>
+          </div>
+          <div style="background:#f0fdf4;border-radius:10px;padding:12px;text-align:center;">
+            <div style="font-size:24px">🩹</div>
+            <strong style="color:#15803d;">C – Compression</strong>
+            <p style="font-size:12px;color:#64748b;margin-top:4px;">Balut dengan perban elastis</p>
+          </div>
+          <div style="background:#fdf4ff;border-radius:10px;padding:12px;text-align:center;">
+            <div style="font-size:24px">⬆️</div>
+            <strong style="color:#7e22ce;">E – Elevation</strong>
+            <p style="font-size:12px;color:#64748b;margin-top:4px;">Angkat bagian yang cedera lebih tinggi dari jantung</p>
+          </div>
+        </div>
+        <table class="soal-table">
+          <tr><th>Bentuk Soal</th><th>No. Soal</th><th>Level</th></tr>
+          <tr><td><span class="soal-type st-PG">PG</span></td><td>14</td><td>–</td></tr>
+          <tr><td><span class="soal-type st-MJ">MJ</span></td><td>22</td><td>–</td></tr>
+          <tr><td><span class="soal-type st-UT">Uraian</span></td><td>35</td><td><span class="lvl lvl-L3">L3</span></td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="empty" id="empty" style="display:none">
+    😔 Tidak ada TP yang cocok. Coba kata kunci lain!
+  </div>
+
+</main>
+
+<footer>Kisi-Kisi PJOK PSKA · Kecamatan Cipayung · Tahun Pelajaran 2025–2026 · 35 Soal · 120 Menit</footer>
+
+<script>
+  const tpCards = document.querySelectorAll('.tp-card');
+  const searchEl = document.getElementById('search');
+  const klasBtns = document.querySelectorAll('.kelas-btn');
+  const emptyEl = document.getElementById('empty');
+  let activeKelas = 'all';
+  const opened = new Set();
+  const total = tpCards.length;
+
+  function toggleTP(header) {
+    const card = header.closest('.tp-card');
+    const wasOpen = card.classList.contains('open');
+    card.classList.toggle('open', !wasOpen);
+    if (!wasOpen) {
+      opened.add(card.dataset.id);
+      const fill = document.getElementById('pf');
+      const count = document.getElementById('pc');
+      fill.style.width = (opened.size / total * 100) + '%';
+      count.textContent = opened.size + ' / ' + total + ' TP';
+    }
+  }
+
+  function filter() {
+    const q = searchEl.value.toLowerCase();
+    let vis = 0;
+    tpCards.forEach(c => {
+      const kelasOk = activeKelas === 'all' || c.dataset.kelas === activeKelas;
+      const textOk = !q || c.textContent.toLowerCase().includes(q);
+      const show = kelasOk && textOk;
+      c.style.display = show ? '' : 'none';
+      if (show) vis++;
+    });
+    // Hide/show section titles
+    document.querySelectorAll('.section-title').forEach(t => t.style.display = '');
+    emptyEl.style.display = vis === 0 ? 'block' : 'none';
+  }
+
+  klasBtns.forEach(b => {
+    b.addEventListener('click', () => {
+      klasBtns.forEach(x => x.classList.remove('active'));
+      b.classList.add('active');
+      activeKelas = b.dataset.kelas;
+      filter();
+    });
+  });
+
+  searchEl.addEventListener('input', filter);
+
+  // entrance animation
+  tpCards.forEach((c, i) => {
+    c.style.opacity = '0';
+    c.style.transform = 'translateY(12px)';
+    setTimeout(() => {
+      c.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
+      c.style.opacity = '1';
+      c.style.transform = 'none';
+    }, 60 + i * 45);
+  });
+</script>
+</body>
+</html>
